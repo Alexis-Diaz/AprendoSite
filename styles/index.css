@@ -1,0 +1,86 @@
+/*Fondos de pantalla*/
+.bg-gray{
+    background-color: #f7f7f9;
+}
+
+.bg-purple{
+    background-color: #4051e1;
+}
+
+/*grid*/
+.panel-left{
+    width: 49%;
+    display: inline;
+    float:left;
+}
+
+.panel-right{
+    width:49%;
+    position: inline;
+    float: right;
+    
+}
+
+/*Texto titulo pagina*/
+.titulo {
+    font-family: "Paytone One"; 
+    letter-spacing: 2px;
+    line-height: 80px;
+    color: #4051e1;
+    font-size: 5.1em;
+    width:55%;
+}
+
+.container-titulo{
+    position: absolute;
+    top: 27%;
+    left: 6%;
+}
+
+.btn-empezar{
+    width: 250px;
+    height:70px;
+    border-radius: 60px;
+    color: rgba(39, 38, 38);
+    font-size: 2em;
+    font-family: "Comfortaa";
+    font-weight: bold;
+    margin-left: 110px;
+    background-color: rgb(219 221 128);
+    border: 5px rgb(125, 126, 58);
+    box-shadow: 1px 6px 5px rgb(226, 225, 225);
+}
+
+.btn-empezar:hover{
+    background-color: rgb(227, 230, 64);
+    color: rgb(41, 41, 41);
+    box-shadow: 1px 6px 5px rgb(180, 179, 179);
+}
+
+.img-avion{
+    position: absolute;
+    top: 49%;
+    right: 32%;
+    transform: rotate(24deg);
+    z-index: 2;
+}
+
+.img-azul{
+    position: absolute;
+    top: 13%;
+    right: 25%;
+    z-index:1;
+}
+
+.img-libros{
+    position: absolute;
+    top: 69%;
+    right: 18%;
+}
+
+.img-amarillo {
+    position: absolute;
+    top: 46%;
+    right: 6%;
+
+}
