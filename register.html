@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/register.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One">
     <title>Document</title>
 </head>
-<body>
-    <h1></h1>
+<body class="bg-gray">
+    <h1 class="titulo">Dinos quien eres</h1>
+    
+    <div class="form-control">
+        <label class="lb-nombre">Nombre</label>
+        <input class="txt-nombre" type="text">
+    </div>
+
+    <div class="form-control">
+        <label class="lb-genero">Escoge tu género:</label>
+        <div class="img-container">
+            <img src="./public/img/chico.png">
+            <img src="./public/img/chica.png">
+        </div>
+        <label>Niño</label><input type="radio">
+        <label>Niña</label><input type="radio">
+    </div>
+    
 </body>
 </html>
