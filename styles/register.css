@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .bg-gray{
     background-color: rgb(247 247 249);
 }
@@ -108,7 +111,14 @@ button {
     height: 50px;
     color: white;
     font-size: 1.2em;
+}
+
+.btn-iniciar{
     background-color: rgb(64 81 225);
+}
+
+.btn-volver{
+    background-color: rgb(219, 85, 51);
 }
 
 .btn-volver,.btn-iniciar {
@@ -120,4 +130,53 @@ button {
 }
 .btn-iniciar:hover{
     box-shadow: 5px 5px 5px rgb(130, 135, 180);
+}
+
+/*Desde aqui se maneja los tamaños de la pantalla*/
+
+/*Para pantallas menores a 450px*/
+@media screen and (max-width:450px){
+    .titulo{
+        width: 100%;
+        font-size: 2.5em;
+        letter-spacing: 3px;
+    }
+
+    .form-control {
+        margin: 0 0 60px 0;    
+    }
+
+       
+    .lb-nombre {
+        display: block;
+        font-family: arial;
+        font-size: 1.5em;
+        margin-right: 0;
+    }
+
+    .txt-nombre {
+        display: block;
+        width: 100%;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .lb-genero {
+        font-family: arial;
+        font-size: 1.5em;
+    }
+
+    img{
+        height: 80px;
+        margin:0 20px;
+    }
+
+    .lbl-chico, .lbl-chica {
+        font-size: 1.3em;
+        margin: 0 10px;
+    }
+
+    button {
+        width: 100px;
+    }
 }
