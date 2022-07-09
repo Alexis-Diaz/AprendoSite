@@ -8,10 +8,10 @@ function redirectToRegister () {
         const path = `${location.pathname}`
         const pathRaiz = path.replace("/index.html", "")
         console.log(`${pathRaiz}/register.html`)
-        window.location.href=`${pathRaiz}/register.html`
+        window.location.href=`${pathRaiz}/pages/register.html`
     }else{
         //pruebas en produccion
-        window.location.href = "/register.html"
+        window.location.href = "/pages/register.html"
     }
    
 }
