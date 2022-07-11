@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./styles/categories.css">
+    <link rel="stylesheet" type="text/css" href="../styles/categories.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One">
     <title>Document</title>
 </head>
@@ -16,37 +16,44 @@
         </div>
         <div class="container-img">
             <div class="img-flecha"> 
-                <img id="flecha" src="./public/img/flecha.png">
+                <img id="flecha" src="../public/img/flecha.png">
             </div>
             <div class="img-papa">
-                <img id="papa" src="./public/img/papa.png">
+                <img id="papa" src="../public/img/papa.png">
             </div>
             <div class="img-amarillo">
-                <img id="amarillo" src="./public/img/amarillo.png">
+                <img id="amarillo" src="../public/img/amarillo.png">
             </div>
         </div>
         <div class="container-categorias">
-            <div class="card">
-                <span class="card-number">01</span>
-                <span class="card-title">SUMAS</span>
+            <div class="card" onclick="redirectToConsejos()">
+                <span class="card-number" onclick="redirectToConsejos()">01</span>
+                <span class="card-title" onclick="redirectToConsejos()">SUMAS</span>
             </div>
-            <div class="card">
-                <span class="card-number">02</span>
-                <span class="card-title">RESTAS</span>
+            <div class="card" onclick="redirectToConsejos()">
+                <span class="card-number" onclick="redirectToConsejos()">02</span>
+                <span class="card-title" onclick="redirectToConsejos()">RESTAS</span>
             </div>
-            <div class="card">
-                <span class="card-number">03</span>
-                <span class="card-title">DIVISIÓN</span>
+            <div class="card" onclick="redirectToConsejos()">
+                <span class="card-number" onclick="redirectToConsejos()">03</span>
+                <span class="card-title" onclick="redirectToConsejos()">DIVISIÓN</span>
             </div>
-            <div class="card">
-                <span class="card-number">04</span>
-                <span class="card-title">MULTIPLICACIÓN</span>
+            <div class="card" onclick="redirectToConsejos()">
+                <span class="card-number" onclick="redirectToConsejos()">04</span>
+                <span class="card-title" onclick="redirectToConsejos()">MULTIPLICACIÓN</span>
             </div>
-            <div class="card">
-                <span class="card-number">05</span>
-                <span class="card-title">PUEDO CON TODO!</span>
+            <div class="card" onclick="redirectToConsejos()">
+                <span class="card-number" onclick="redirectToConsejos()">05</span>
+                <span class="card-title" onclick="redirectToConsejos()">PUEDO CON TODO!</span>
             </div>
         </div>
     </div>
+    <div class="form-control"
+        <div class="form-button">
+            <button class="btn-volver" onclick="redirectToRegister()">Volver</button>
+        </div>
+    </div>
+
+    <script src="../js/routes.js"></script>
 </body>
 </html>
