@@ -1,5 +1,5 @@
 
-const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html/
+const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html/
 const UrlGlobal = location.pathname.replace(regularExpression, "");
 let isProduction = false;
 
@@ -37,5 +37,13 @@ function redirectToIndex (){
         window.location.href = "/"
     }else{
         window.location.href = `${UrlGlobal}index.html`
+    }
+}
+
+function redirectToOperaciones () {
+    if(isProduction){
+        window.location.href = "/pages/operaciones.html"
+    }else{
+        window.location.href = `${UrlGlobal}pages/operaciones.html`
     }
 }

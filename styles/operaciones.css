@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+}
+.bg-color{
+   background-color: rgb(247 247 249);
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-tiempo{
+    text-align: right;
+    width: 100%;
+}
+
+.container-img{
+    width: 33.33333%;
+    position: relative;
+    height: 60vh;
+}
+
+.container-operacion{
+    width: 33.33333%;
+    text-align: center;
+}
+
+.form-control{
+    width: 33.33333%;
+}
+
+.tiempo{
+    color: rgb(73 79 86);
+    font-family: "Paytone One";
+    font-size: 3.5em;
+    letter-spacing: 4px;
+    margin-right: 7%;
+    margin-bottom: 0;
+}
+.timer{
+    color: rgb(12 143 25);
+    font-family: "Paytone One";
+    font-size: 3.5em;
+    letter-spacing: 4px;
+    margin-right: 20%;
+}
+
+#morado{
+    height: 300px;
+}
+
+#base{
+    height: 280px;
+    transform: rotate(-65deg);
+}
+
+.img-morado{
+    position: absolute;
+    top: -70px;
+    left: 15%;
+    z-index: 1;
+}
+
+.img-base{
+    position: absolute;
+    top: 90px;
+    right: 10%;
+}
+
+.operacion-arriba, .operacion-abajo{
+    height: 90px;
+    font-size: 4.3em;
+    font-family: "Paytone One";
+    color:rgb(73 79 86);
+}
+
+#txtResultado{
+    height: 110px;
+    width: 130px;
+    font-size: 4.3em;
+    font-family: "Paytone One";
+    color:rgb(6, 101, 209);
+    background-color: rgb(219 221 128);
+    text-align: center;
+    border: none;
+}
+
+.hr-line{
+    border-top: solid black 5px;
+    width: 170px;
+}
+
+/*Estilos de los botones y la leyenda*/
+.form-control{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+
+.btn-enviar{
+    background-color: rgb(64 81 225);
+    border: 5px solid rgb(48 11 153);
+    color: white;
+    height: 120px;
+    width: 250px;
+    font-size: 1.5em;
+}
+
+.ejercicios-restantes{
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.form-button{
+    margin: 0 30px 40px 0;
+}
+
+
+.btn-enviar:hover{
+    background-color: rgb(45, 57, 168);
+}
+
+.btn-salir{
+    background-color: rgb(247, 25, 25);
+    border: 2px solid rgb(153, 11, 11);
+    color: white;
+    height: 35px;
+    width: 90px;
+    font-size: 1em;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+.btn-salir:hover{
+    background-color: rgb(189, 0, 0);
+}
