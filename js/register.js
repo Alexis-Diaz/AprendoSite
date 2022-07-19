@@ -1,4 +1,5 @@
 import { redirectToIndex, redirectToCategories } from "./routes.js";
+import { logonUser } from "./authorize.js";
 
 const btnVolver = document.getElementById("btnVolver");
 btnVolver.addEventListener('click', e => {
@@ -7,15 +8,14 @@ btnVolver.addEventListener('click', e => {
 
 const btnIniciar = document.getElementById("btnIniciar");
 btnIniciar.addEventListener('click', e => {
-    redirectToCategories();
+  
+    if (logonUser()){
+        //el usuario es correcto
+        console.log("USUARIO VALIDO")
+        redirectToCategories();
+
+    }else{
+        //el usuario es incorrecto
+        console.log("USUARIO INVALIDO")
+    }
 });
-
-// const btnEmpezar = document.getElementById("btn-empezar");
-// btnEmpezar.addEventListener('click', e => {
-//     redirectToRegister();
-// });
-
-// const btnEmpezar = document.getElementById("btn-empezar");
-// btnEmpezar.addEventListener('click', e => {
-//     redirectToRegister();
-// });

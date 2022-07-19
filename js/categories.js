@@ -1,4 +1,5 @@
-import { redirectToConsejos, redirectToIndex } from "./routes.js";
+import { redirectToRegister, redirectToConsejos, redirectToIndex } from "./routes.js";
+import { existSessionOpen, destroySession } from "./authorize.js";
 
 const btnSumas = document.getElementById("btnSumas");
 btnSumas.addEventListener('click', e => {
@@ -27,5 +28,6 @@ btnTodo.addEventListener('click', e => {
 
 const btnCerrar = document.getElementById("btnCerrar");
 btnCerrar.addEventListener('click', e => {
+    destroySession();
     redirectToIndex();
 });
