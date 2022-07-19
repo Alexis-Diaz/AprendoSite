@@ -1,7 +1,6 @@
-
 const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html/
 const UrlGlobal = location.pathname.replace(regularExpression, "");
-let isProduction = false;
+let isProduction = true;
 
 function redirectToRegister (){
     // console.log(location.protocol);
@@ -17,6 +16,11 @@ function redirectToRegister (){
 }
 
 function redirectToCategories (){
+    
+    //getInfoUser();
+
+
+    //Sirve la url
     if(isProduction){
          window.location.href = "/pages/categories.html"
     }else{
@@ -47,3 +51,5 @@ function redirectToOperaciones () {
         window.location.href = `${UrlGlobal}pages/operaciones.html`
     }
 }
+
+export {redirectToRegister, redirectToCategories, redirectToConsejos,redirectToIndex, redirectToOperaciones}

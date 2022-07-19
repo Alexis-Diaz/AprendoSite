@@ -12,8 +12,8 @@
     <h1 class="titulo">Dinos quien eres</h1>
     
     <div class="form-control">
-        <label class="lb-nombre">Nombre</label>
-        <input class="txt-nombre" type="text">
+        <label for="txt-nombre" class="lb-nombre">Nombre</label>
+        <input id="txt-nombre" class="txt-nombre" type="text">
     </div>
 
     <div class="form-control">
@@ -31,11 +31,11 @@
     </div>
     <div class="from-control">
         <div class="form-button">
-            <button class="btn-volver" onclick="redirectToIndex()">Volver</button>
-            <button class="btn-iniciar" onclick="redirectToCategories()">Iniciar</button>
+            <button id="btnVolver" class="btn-volver">Volver</button>
+            <button id="btnIniciar" class="btn-iniciar">Iniciar</button>
         </div>
     </div>
     
-    <script src="../js/aprendo.js"></script>
+    <script src="../js/register.js" type="module"></script>
 </body>
 </html>
