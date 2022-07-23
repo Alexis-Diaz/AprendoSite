@@ -33,6 +33,19 @@ export const existSessionOpen = () => {
     return existSession;
 }
 
+export const existCategoria = () => {
+    let existCategoria = false;
+    const cookie = localStorage.getItem("categoria");
+
+    if(cookie !== null && cookie !== ""){
+        //const json = JSON.parse(cookie)
+        existSession = true
+    }
+    
+    return existSession;
+}
+
 export const destroySession = () => {
     localStorage.removeItem("tokenAprendo");
+    localStorage.removeItem("categoria");
 }

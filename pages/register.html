@@ -9,6 +9,14 @@
     <title>Aprendo-Registrarse</title>
 </head>
 <body class="bg-gray">
+    <script type="module">
+        import { existSessionOpen } from "../js/authorize.js";
+        import { redirectToCategories } from "../js/routes.js";
+        if(existSessionOpen()){
+        redirectToCategories();
+        }
+     </script>
+
     <h1 class="titulo">Dinos quien eres</h1>
     
     <div class="form-control">
