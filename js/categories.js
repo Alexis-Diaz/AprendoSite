@@ -4,14 +4,12 @@ import { destroySession } from "./authorize.js";
 
 const btnSumas = document.getElementById("btnSumas");
 btnSumas.addEventListener('click', e => {
-    debugger;
     localStorage.setItem("categoria", "1");
     redirectToConsejos();
 });
 
 const btnRestas = document.getElementById("btnRestas");
 btnRestas.addEventListener('click', e => {
-    debugger;
     localStorage.setItem("categoria", "2");
     redirectToConsejos();
 });

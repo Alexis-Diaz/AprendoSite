@@ -29,7 +29,7 @@ export const cambiarCategoria = () => {
     return categoria;
 }
 
-//Funcion para cambiar el signo de la operacion
+//Funcion para cambiar el signo de la operacion matematica
 export const cambiarSignoOperacion = () => {
     const cookie = localStorage.getItem("categoria");
     let categoria = "";
@@ -73,6 +73,69 @@ export const cambiarSignoOperacion = () => {
     return categoria;
 }
 
+//Funcion para cambiar los numeros de la operacion matematica
+export const cambiarNumerosOperacion = () => {
+    document.getElementById("numArriba").innerHTML = numeroRandom(1,15); 
+    document.getElementById("numAbajo").innerHTML = numeroRandom(1,15); 
+}
+
+//Funcion para validar la respuesta ingresada por el usuario
+export const comprobarRespuesta = (veces) => {
+    let res = false;
+
+    const numA = parseInt(document.getElementById("numArriba").innerHTML);
+    const numB = parseInt(document.getElementById("numAbajo").innerHTML);
+    const resUsuario = parseInt(document.getElementById("txtResultado").value);
+    const tipoOperacion = document.getElementById("signoOperacion").innerHTML;
+    
+    let aciertos = 0;
+    let errores = 0;
+
+    switch(tipoOperacion){
+        case '+':
+            if(resUsuario == numA + numB){
+                aciertos ++;
+            }else{
+                errores ++;
+            }
+        break;
+
+        case '-':
+            if(resUsuario == numA - numB){
+                aciertos ++;
+            }else{
+                errores ++;
+            }
+        break;
+
+        case '÷':
+            if(resUsuario == numA / numB){
+                aciertos ++;
+            }else{
+                errores ++;
+            }
+        break;
+
+        case 'x':
+            if(resUsuario == numA * numB){
+                aciertos ++;
+            }else{
+                errores ++;
+            }
+        break;
+    }
+
+    cambiarSignoOperacion();
+    cambiarNumerosOperacion();
+    limpiarEntradaUsuario();
+
+    if(guardarRespuestas(aciertos, errores, veces)){
+        res = true;
+    }
+
+    return res;
+}
+
 //Funcion para obtener de forma un numero aleatorio
 //entre un numero minimo y maximo
 export const numeroRandom = (min, max) =>{
@@ -80,3 +143,39 @@ export const numeroRandom = (min, max) =>{
     max = Math.floor(max);
     return Math.floor(Math.random() * (1 + max - min) + min);
 }
+
+//funcion para limpiar la entrada del usuario
+function limpiarEntradaUsuario(){
+    document.getElementById("txtResultado").value="";
+}
+
+//function para guardar en local las respuestas del usuario
+function guardarRespuestas(aciertos, errores, veces ){
+    let res = false;
+    const obtenerResultados = localStorage.getItem("resultados");
+   
+    if(obtenerResultados !== null){
+
+        let values = obtenerResultados.split('|');
+        aciertos = parseInt(values[0]) + aciertos;
+        errores = parseInt(values[1]) + errores;
+        localStorage.setItem("resultados", `${aciertos}|${errores}`);
+
+        //Aqui se verifica la cantidad de operaciones a realizar
+        if(aciertos + errores === veces){
+            res = true;
+        }
+
+    }else{
+
+        localStorage.setItem("resultados", `${aciertos}|${errores}`);
+
+    }
+    return res;
+}
+
+function destroyResultados(){
+    localStorage.removeItem("resultados");
+    localStorage.removeItem("categoria");
+}
+

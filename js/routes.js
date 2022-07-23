@@ -1,4 +1,4 @@
-const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html|pages\/error.html/
+const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html|pages\/error.html|pages\/operaciones.html/
 const UrlGlobal = location.pathname.replace(regularExpression, "");
 let isProduction = true;
 
@@ -60,4 +60,13 @@ function redirectToError () {
     }
 }
 
-export {redirectToRegister, redirectToCategories, redirectToConsejos,redirectToIndex, redirectToOperaciones, redirectToError}
+function redirectToInforme () {
+    if(isProduction){
+        window.location.href = "/pages/informe.html"
+    }else{
+        window.location.href = `${UrlGlobal}pages/informe.html`
+    }
+}
+
+
+export {redirectToRegister, redirectToCategories, redirectToConsejos,redirectToIndex, redirectToOperaciones, redirectToError, redirectToInforme}
