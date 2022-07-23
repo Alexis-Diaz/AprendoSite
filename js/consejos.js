@@ -8,7 +8,6 @@ btnComenzar.addEventListener('click', e => {
 
 window.onload = function () {
     const val = cambiarCategoria();
-    debugger;
     if(val === "" || val === null){
         redirectToError();
     }
