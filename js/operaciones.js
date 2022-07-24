@@ -9,8 +9,8 @@ btnSalir.addEventListener('click', e => {
 //para cambiar los numero de forma aleatoria la 
 //primera vez que carga la pagina
 window.onload = function () {
-    cambiarNumerosOperacion();
-    cambiarSignoOperacion();
+    const signo = cambiarSignoOperacion();
+    cambiarNumerosOperacion(signo);
 }
 
 //validacion del boton enviar

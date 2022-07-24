@@ -74,9 +74,49 @@ export const cambiarSignoOperacion = () => {
 }
 
 //Funcion para cambiar los numeros de la operacion matematica
-export const cambiarNumerosOperacion = () => {
-    document.getElementById("numArriba").innerHTML = numeroRandom(1,15); 
-    document.getElementById("numAbajo").innerHTML = numeroRandom(1,15); 
+export const cambiarNumerosOperacion = (signo) => {
+    let numA = 0;
+    let numB = 0;
+   //de kinder 5 años 1 a 10 solo sumas
+   //de primer a segundo 1 a 20 sumas y restas
+   //de tercer grado 1 a 20 multiplicaciones y divisiones
+   //de cuarto y quinto 1 a 30
+   //de basica 1 a 50
+   //de media 1 a 100
+    let min = 1;
+    let max = 100
+
+    if(signo === '+'){
+        numA = numeroRandom(min, max);
+        numB = numeroRandom(min, max);
+    }
+
+    if(signo === '-'){
+        numA = numeroRandom(min, max);
+        numB = numeroRandom(min, max);
+
+        while (numB > numA){
+            numB = numeroRandom(min, max);
+        }
+    }
+
+    if(signo === '÷'){
+        numA = numeroRandom(min, max);
+        numB = numeroRandom(min, max);
+
+        while (numA % numB != 0 || numA === numB || numB === 1){
+            numA = numeroRandom(min, max);
+            numB = numeroRandom(min, max);
+        }
+    }
+
+    if(signo === 'x'){
+        numA = numeroRandom(min, max);
+        numB = numeroRandom(min, max);
+    }
+
+    document.getElementById("numArriba").innerHTML = numA; 
+    document.getElementById("numAbajo").innerHTML = numB; 
 }
 
 //Funcion para validar la respuesta ingresada por el usuario
@@ -125,12 +165,12 @@ export const comprobarRespuesta = (veces) => {
         break;
     }
 
-    cambiarSignoOperacion();
-    cambiarNumerosOperacion();
-    limpiarEntradaUsuario();
-
     if(guardarRespuestas(aciertos, errores, veces)){
         res = true;
+    }else{
+        let signo = cambiarSignoOperacion();
+        cambiarNumerosOperacion(signo);
+        limpiarEntradaUsuario();
     }
 
     return res;
@@ -139,8 +179,8 @@ export const comprobarRespuesta = (veces) => {
 //Funcion para obtener de forma un numero aleatorio
 //entre un numero minimo y maximo
 export const numeroRandom = (min, max) =>{
-    min = Math.ceil(min);
-    max = Math.floor(max);
+    // min = Math.ceil(min);
+    // max = Math.floor(max);
     return Math.floor(Math.random() * (1 + max - min) + min);
 }
 
