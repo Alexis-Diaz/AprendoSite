@@ -1,3 +1,5 @@
+import { redirectToInforme } from "./routes.js";
+
 //Cambia la categoria del juego en la pagina de consejos
 export const cambiarCategoria = () => {
    
@@ -176,9 +178,56 @@ export const comprobarRespuesta = (veces) => {
     return res;
 }
 
+export const iniciarTiempo = (minute, second, veces) =>{
+    const min = minute;
+    const seg = second;
+
+    const spanMin = document.getElementById("timerMinute");
+    const spanSeparador = document.getElementById("separator");
+    const spanSeg = document.getElementById("timerSecond");
+
+    const myTimer = setInterval(() => {
+        if(second > -1){
+            second --;
+
+            if(second < 10){
+                spanMin.style.color="red";
+                spanSeparador.style.color="red";
+                spanSeg.style.color="red";
+                second = "0" + second
+            }
+            
+            if(second === "0-1" && minute >= 1){
+                minute--;
+                second = 59;
+            }
+
+            if( minute === 0 && second === "0-1"){
+                second = "00"
+                if(comprobarRespuesta(veces)){
+                    clearInterval(myTimer);
+                    redirectToInforme();
+                }else{
+                    spanMin.style.color="rgb(12 143 25)";
+                    spanSeparador.style.color="rgb(12 143 25)";
+                    spanSeg.style.color="rgb(12 143 25)";
+
+                    minute = min;
+                    second = seg
+                }
+            }
+        }
+        spanMin.innerHTML = minute;
+        spanSeg.innerHTML= second;
+
+    }, 1000);
+
+    return myTimer;
+}
+
 //Funcion para obtener de forma un numero aleatorio
 //entre un numero minimo y maximo
-export const numeroRandom = (min, max) =>{
+function numeroRandom (min, max){
     // min = Math.ceil(min);
     // max = Math.floor(max);
     return Math.floor(Math.random() * (1 + max - min) + min);
@@ -218,4 +267,3 @@ function destroyResultados(){
     localStorage.removeItem("resultados");
     localStorage.removeItem("categoria");
 }
-

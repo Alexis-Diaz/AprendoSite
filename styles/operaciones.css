@@ -51,6 +51,10 @@
     font-family: "Paytone One";
     font-size: 3.5em;
     letter-spacing: 4px;
+    margin-right: 0%;
+}
+
+.timer:nth-child(5){
     margin-right: 20%;
 }
 
