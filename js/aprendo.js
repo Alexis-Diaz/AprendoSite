@@ -86,7 +86,7 @@ export const cambiarNumerosOperacion = (signo) => {
    //de basica 1 a 50
    //de media 1 a 100
     let min = 1;
-    let max = 100
+    let max = 50
 
     if(signo === '+'){
         numA = numeroRandom(min, max);
@@ -249,18 +249,25 @@ function guardarRespuestas(aciertos, errores, veces ){
         aciertos = parseInt(values[0]) + aciertos;
         errores = parseInt(values[1]) + errores;
         localStorage.setItem("resultados", `${aciertos}|${errores}`);
-
+        debugger;
+        //Aqui se lleva la cuenta de los ejercicios respondidos
+        conteoEjercicios(aciertos + errores, veces)
         //Aqui se verifica la cantidad de operaciones a realizar
         if(aciertos + errores === veces){
             res = true;
         }
 
     }else{
-
+        conteoEjercicios(aciertos + errores, veces)
         localStorage.setItem("resultados", `${aciertos}|${errores}`);
 
     }
     return res;
+}
+
+function conteoEjercicios(resueltos, total){
+    document.getElementById("opFinalizadas").innerHTML = resueltos + 1;
+    document.getElementById("opTotales").innerHTML = total;
 }
 
 function destroyResultados(){
