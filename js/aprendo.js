@@ -1,5 +1,7 @@
 import { redirectToInforme } from "./routes.js";
 
+//*******************************************************************************************//
+//FUNCIONES PARA LAS OPERACIONES MATEMATICAS
 //Cambia la categoria del juego en la pagina de consejos
 export const cambiarCategoria = () => {
    
@@ -225,12 +227,9 @@ export const iniciarTiempo = (minute, second, veces) =>{
     return myTimer;
 }
 
-//Funcion para obtener de forma un numero aleatorio
-//entre un numero minimo y maximo
-function numeroRandom (min, max){
-    // min = Math.ceil(min);
-    // max = Math.floor(max);
-    return Math.floor(Math.random() * (1 + max - min) + min);
+export const destroyResultados= () => {
+    localStorage.removeItem("resultados");
+    localStorage.removeItem("categoria");
 }
 
 //funcion para limpiar la entrada del usuario
@@ -270,7 +269,174 @@ function conteoEjercicios(resueltos, total){
     document.getElementById("opTotales").innerHTML = total;
 }
 
-function destroyResultados(){
-    localStorage.removeItem("resultados");
-    localStorage.removeItem("categoria");
+//*******************************************************************************************//
+//FUNCIONES PARA INFORME DE RESULTADOS
+//rango de notas
+//0-3 muy malo
+//4,5 malo
+//6,7 bueno
+//8,9 muy bueno
+//10 excelente
+
+export const calcularNota = () => {  
+    const resultados = localStorage.getItem("resultados");
+    let user = localStorage.getItem("tokenAprendo");
+   
+    const [aciertos, errores] = resultados.split('|');
+    const {name, chico, chica} = JSON.parse(user);
+    
+    const totalEjerciciosResueltos = parseInt(aciertos) + parseInt(errores);
+
+    //calculo de la nota: 
+    //1 a 10
+    const nota = (10/totalEjerciciosResueltos) * aciertos;
+    cambiarMensajes(nota);
+    cambiarAvatar(chico, chica, nota);
+    //para completar tarjeta de resultados
+    document.getElementById("nota").innerHTML = nota;
+    document.getElementById("aciertos").innerHTML = aciertos;
+    document.getElementById("errores").innerHTML = errores;
+    document.getElementById("user").innerHTML = name;
+}
+
+//para cambiar los mensajes segun la nota
+function cambiarMensajes(nota){
+
+    const title = document.getElementById("title")
+    const msgResultado = document.getElementById("mensajeResultado");
+    switch(nota){
+        case 0 :
+            title.innerHTML = "¡MUY MALO!";
+            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
+            break;
+        case 1 :
+            title.innerHTML = "¡MUY MALO!";
+            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
+            break;
+        case 2 :
+            title.innerHTML = "¡MUY MALO!";
+            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
+            break;
+        case 3 :
+            title.innerHTML = "¡MUY MALO!";
+            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
+            break;
+        case 4 :
+            title.innerHTML = "¡MALO!";
+            msgResultado.innerHTML = "¡¿Que te ha sucedido?! Hemos revisado tus respuestas varias veces pero lamentamos decirte que tu nota ha sido bastante baja. Pero no te desanimes, sigue practicando y seguro conseguiras mejorar mucho.";
+            break; 
+        case 5 :
+            title.innerHTML = "¡MALO!";
+            msgResultado.innerHTML = "¡¿Que te ha sucedido?! Hemos revisado tus respuestas varias veces pero lamentamos decirte que tu nota ha sido bastante baja. Pero no te desanimes, sigue practicando y seguro conseguiras mejorar mucho.";
+            break; 
+        case 6 :
+            title.innerHTML = "¡BUENO!";
+            msgResultado.innerHTML = "Aunque esta nota puede parecer aceptable para algunos, creemos que puedes obtener un mejor resultado. Si prácticas mucho seguro conseguirás mejorar bastante. Asi que recuerda: 'La conformidad es el enemigo del crecimiento'.";
+            break; 
+        case 7 :
+            title.innerHTML = "¡BUENO!";
+            msgResultado.innerHTML = "Aunque esta nota puede parecer aceptable para algunos, creemos que puedes obtener un mejor resultado. Si prácticas mucho seguro conseguirás mejorar bastante. Asi que recuerda: 'La conformidad es el enemigo del crecimiento'.";
+            break; 
+        case 8 :
+            title.innerHTML = "MUY BUENO!";
+            msgResultado.innerHTML = "Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
+            break; 
+        case 9 :
+            title.innerHTML = "MUY BUENO!";
+            msgResultado.innerHTML = "Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
+            break; 
+        case 10:
+            title.innerHTML = "¡FELICIDADES!";
+            msgResultado.innerHTML = "¡Nos has dejado sorprendidos! Como dicen la práctica hace al maestro y ahora tú lo haz demostrado, puedes sentirte orgulloso, haz alcanzado un puntaje perfecto. ¡Sigue así!";
+            break;
+    }
+}
+
+
+function cambiarAvatar(chico, chica, nota){
+    const avatar = document.getElementById("img-avatar");
+    const rostro = document.getElementById("img-rostro");
+    const numeroAleatorio = numeroRandom(1, 4);
+    if(chico){
+
+        switch(numeroAleatorio){
+            case 1:
+                avatar.src="../public/img/chico1.png";
+                break;
+            case 2:
+                avatar.src="../public/img/chico2.png";
+                break;
+            case 3:
+                avatar.src="../public/img/chico3.png";
+                break;
+            case 4:
+                avatar.src="../public/img/chico4.png";
+                break;
+        }
+
+    }
+
+    if(chica){
+        switch(numeroAleatorio){
+            case 1:
+                avatar.src="../public/img/chica1.png";
+                break;
+            case 2:
+                avatar.src="../public/img/chica2.png";
+                break;
+            case 3:
+                avatar.src="../public/img/chica3.png";
+                break;
+            case 4:
+                avatar.src="../public/img/chica4.png";
+                break;
+        }
+    }
+
+    switch(nota){
+        case 0 :
+            rostro.src="../public/img/muy-mal.png";
+            break;
+        case 1 :
+            rostro.src="../public/img/muy-mal.png";
+            break;
+        case 2 :
+            rostro.src="../public/img/muy-mal.png";
+            break;
+        case 3 :
+            rostro.src="../public/img/muy-mal.png";
+            break;
+        case 4 :
+            rostro.src="../public/img/malo.png";
+            break; 
+        case 5 :
+            rostro.src="../public/img/malo.png";
+            break; 
+        case 6 :
+            rostro.src="../public/img/bueno.png";
+            break; 
+        case 7 :
+            rostro.src="../public/img/bueno.png";
+            break; 
+        case 8 :
+            rostro.src="../public/img/muy-bueno.png";
+            break; 
+        case 9 :
+            rostro.src="../public/img/muy-bueno.png";
+            break; 
+        case 10:
+            rostro.src="../public/img/excelente.png";
+            break; 
+    }
+
+}
+
+//*******************************************************************************************//
+//FUNCIONES EXTRAS
+//Funcion para obtener de forma un numero aleatorio
+//entre un numero minimo y maximo
+function numeroRandom (min, max){
+    // min = Math.ceil(min);
+    // max = Math.floor(max);
+    return Math.floor(Math.random() * (1 + max - min) + min);
 }

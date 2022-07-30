@@ -12,30 +12,36 @@
     <div class="container">
         <div class="container-title">
             <img class="estrella" id="star-left" src="../public/img/estrella.png">
-            <h1 class="title">¡FELICIDADES!</h1>
+            <h1 id="title" class="title"></h1>
             <img class="estrella" id="star-right" src="../public/img/estrella.png">
         </div>
         <div class="container-parrafo">
-            <p>Puedes sentirte orgulloso, haz alcanzado un puntaje perfecto</p>
+            <p id="mensajeResultado"></p>
         </div>
         <div class="container-card">
-            <img id="img-avatar" src="../public/img/chico1.png">
-            <img id="img-rostro" src="../public/img/excelente.png">
+            <img id="img-avatar" src="">
+            <img id="img-rostro" src="">
             <div class="card">
                 <div>
-                    <span>Osmin Alexis Diaz Lue</span>
+                    <span id="user"></span>
                 </div>
                 <div>
-                    <span>Aciertos: </span><span>10</span>
+                    <span>Aciertos: </span><span id="aciertos">10</span>
                 </div>
                 <div>
-                    <span>Errores: </span><span>0</span>
+                    <span>Errores: </span><span id="errores">0</span>
                 </div>
                 <div>
-                    <span>Nota: </span><span>10</span>
+                    <span>Nota: </span><span id="nota"></span>
                 </div>
             </div>
         </div>
+        <div class="form-control">
+            <button id="btnVolverJugar">Volver a jugar</button>
+            <button id="btnIrCategorias">Ir a categorías</button>
+        </div>
     </div>
+  
+    <script src="../js/informe.js" type="module"></script>
 </body>
 </html>

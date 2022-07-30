@@ -12,8 +12,8 @@
     align-items: center;
 }
 
-
 .container-card{
+    border: solid 4px blue;
     text-align: center;
     position: relative;
 }
@@ -38,7 +38,7 @@
 }
 
 p{
-    font-size: 2.5em;
+    font-size: 1.8em;
     color: white;
     font-family: sans-serif;
     text-align:center;
@@ -70,4 +70,30 @@ p{
     line-height: 35px;
     padding: 20px 0;
     top: 140px;
+}
+
+/*Botones*/
+.form-control{
+    border: solid 3px red;
+    text-align: right;
+    height: 180px;
+    padding-top: 120px;
+
+}
+
+.form-control button{
+    width: 120px;
+    height: 50px;
+    bottom: 0;
+}
+
+#btnVolverJugar{
+    border: none;
+    background-color: rgb(64, 156, 241);
+}
+
+#btnIrCategorias{
+    border:none;
+    background-color: rgb(28, 182, 49);
+
 }
