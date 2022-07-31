@@ -9,6 +9,14 @@
     <title>Aprendo-Operaciones</title>
 </head>
 <body class="bg-color">
+    <script type="module">
+        import { existSessionOpen } from "../js/authorize.js";
+       import { redirectToRegister } from "../js/routes.js";
+        if(!existSessionOpen()){
+            redirectToRegister();
+        }
+    </script>
+
     <div class="container">
 
         <div class="container-tiempo">
@@ -44,7 +52,7 @@
                 <button id="btnEnviar" class="btn-enviar">ENVIAR RESPUESTA!</button>
             </div>
             <div class="ejercicios-restantes">
-                <span id="opFinalizadas"> 1 </span> de <span id="opTotales"> 10 </span> ejercicios
+                <span id="opFinalizadas"></span> de <span id="opTotales"></span> ejercicios
             </div>
         </div>
     </div>

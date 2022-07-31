@@ -87,36 +87,42 @@ export const cambiarNumerosOperacion = (signo) => {
    //de cuarto y quinto 1 a 30
    //de basica 1 a 50
    //de media 1 a 100
-    let min = 1;
-    let max = 50
+    let minSumas = 1;
+    let maxSumas = 50
+    let minRestas = 1;
+    let maxRestas = 50
+    let minMultiplicacion = 1;
+    let maxMultiplicacion = 9
+    let minDivision = 1;
+    let maxDivision = 50
 
     if(signo === '+'){
-        numA = numeroRandom(min, max);
-        numB = numeroRandom(min, max);
+        numA = numeroRandom(minSumas, maxSumas);
+        numB = numeroRandom(minSumas, maxSumas);
     }
 
     if(signo === '-'){
-        numA = numeroRandom(min, max);
-        numB = numeroRandom(min, max);
+        numA = numeroRandom(minRestas, maxRestas);
+        numB = numeroRandom(minRestas, maxRestas);
 
         while (numB > numA){
-            numB = numeroRandom(min, max);
+            numB = numeroRandom(minRestas, maxRestas);
         }
     }
 
     if(signo === '÷'){
-        numA = numeroRandom(min, max);
-        numB = numeroRandom(min, max);
+        numA = numeroRandom(minDivision, maxDivision);
+        numB = numeroRandom(minDivision, maxDivision);
 
         while (numA % numB != 0 || numA === numB || numB === 1){
-            numA = numeroRandom(min, max);
-            numB = numeroRandom(min, max);
+            numA = numeroRandom(minDivision, maxDivision);
+            numB = numeroRandom(minDivision, maxDivision);
         }
     }
 
     if(signo === 'x'){
-        numA = numeroRandom(min, max);
-        numB = numeroRandom(min, max);
+        numA = numeroRandom(minMultiplicacion, maxMultiplicacion);
+        numB = numeroRandom(minMultiplicacion, maxMultiplicacion);
     }
 
     document.getElementById("numArriba").innerHTML = numA; 
@@ -188,6 +194,11 @@ export const iniciarTiempo = (minute, second, veces) =>{
     const spanSeparador = document.getElementById("separator");
     const spanSeg = document.getElementById("timerSecond");
 
+    //se resetea el color a verde
+    spanMin.style.color="rgb(12 143 25)";
+    spanSeparador.style.color="rgb(12 143 25)";
+    spanSeg.style.color="rgb(12 143 25)";
+
     const myTimer = setInterval(() => {
         if(second > -1){
             second --;
@@ -227,11 +238,6 @@ export const iniciarTiempo = (minute, second, veces) =>{
     return myTimer;
 }
 
-export const destroyResultados= () => {
-    localStorage.removeItem("resultados");
-    localStorage.removeItem("categoria");
-}
-
 //funcion para limpiar la entrada del usuario
 function limpiarEntradaUsuario(){
     document.getElementById("txtResultado").value="";
@@ -248,7 +254,7 @@ function guardarRespuestas(aciertos, errores, veces ){
         aciertos = parseInt(values[0]) + aciertos;
         errores = parseInt(values[1]) + errores;
         localStorage.setItem("resultados", `${aciertos}|${errores}`);
-        debugger;
+        
         //Aqui se lleva la cuenta de los ejercicios respondidos
         conteoEjercicios(aciertos + errores, veces)
         //Aqui se verifica la cantidad de operaciones a realizar
@@ -264,7 +270,7 @@ function guardarRespuestas(aciertos, errores, veces ){
     return res;
 }
 
-function conteoEjercicios(resueltos, total){
+export const conteoEjercicios = (resueltos, total) => {
     document.getElementById("opFinalizadas").innerHTML = resueltos + 1;
     document.getElementById("opTotales").innerHTML = total;
 }
@@ -289,7 +295,9 @@ export const calcularNota = () => {
 
     //calculo de la nota: 
     //1 a 10
-    const nota = (10/totalEjerciciosResueltos) * aciertos;
+    let nota = (10/totalEjerciciosResueltos) * aciertos;
+    nota = roundToTwo(nota);
+
     cambiarMensajes(nota);
     cambiarAvatar(chico, chica, nota);
     //para completar tarjeta de resultados
@@ -304,51 +312,25 @@ function cambiarMensajes(nota){
 
     const title = document.getElementById("title")
     const msgResultado = document.getElementById("mensajeResultado");
-    switch(nota){
-        case 0 :
-            title.innerHTML = "¡MUY MALO!";
-            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
-            break;
-        case 1 :
-            title.innerHTML = "¡MUY MALO!";
-            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
-            break;
-        case 2 :
-            title.innerHTML = "¡MUY MALO!";
-            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
-            break;
-        case 3 :
-            title.innerHTML = "¡MUY MALO!";
-            msgResultado.innerHTML = "¡Esto es terrible! Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
-            break;
-        case 4 :
-            title.innerHTML = "¡MALO!";
-            msgResultado.innerHTML = "¡¿Que te ha sucedido?! Hemos revisado tus respuestas varias veces pero lamentamos decirte que tu nota ha sido bastante baja. Pero no te desanimes, sigue practicando y seguro conseguiras mejorar mucho.";
-            break; 
-        case 5 :
-            title.innerHTML = "¡MALO!";
-            msgResultado.innerHTML = "¡¿Que te ha sucedido?! Hemos revisado tus respuestas varias veces pero lamentamos decirte que tu nota ha sido bastante baja. Pero no te desanimes, sigue practicando y seguro conseguiras mejorar mucho.";
-            break; 
-        case 6 :
-            title.innerHTML = "¡BUENO!";
-            msgResultado.innerHTML = "Aunque esta nota puede parecer aceptable para algunos, creemos que puedes obtener un mejor resultado. Si prácticas mucho seguro conseguirás mejorar bastante. Asi que recuerda: 'La conformidad es el enemigo del crecimiento'.";
-            break; 
-        case 7 :
-            title.innerHTML = "¡BUENO!";
-            msgResultado.innerHTML = "Aunque esta nota puede parecer aceptable para algunos, creemos que puedes obtener un mejor resultado. Si prácticas mucho seguro conseguirás mejorar bastante. Asi que recuerda: 'La conformidad es el enemigo del crecimiento'.";
-            break; 
-        case 8 :
-            title.innerHTML = "MUY BUENO!";
-            msgResultado.innerHTML = "Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
-            break; 
-        case 9 :
-            title.innerHTML = "MUY BUENO!";
-            msgResultado.innerHTML = "Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
-            break; 
-        case 10:
-            title.innerHTML = "¡FELICIDADES!";
-            msgResultado.innerHTML = "¡Nos has dejado sorprendidos! Como dicen la práctica hace al maestro y ahora tú lo haz demostrado, puedes sentirte orgulloso, haz alcanzado un puntaje perfecto. ¡Sigue así!";
-            break;
+
+    if(nota >= 0 && nota < 4){
+        title.innerHTML = "¡MUY MALO!";
+        msgResultado.innerHTML = "¡Esto es terrible! &#128565; Quisieramos creer que has estado jugando a las adivinanzas con estas operaciones. De lo contrario te sugerimos que le pidas ayuda a tus padres o maestros para reforzar el tema. Y no sientas pena en pedir ayuda. Recuerda: 'pedir ayuda es el empujón que se necesita para hacer mejor las cosas'.";
+    }else if(nota >= 4 && nota < 6){
+        title.innerHTML = "¡MALO!";
+        msgResultado.innerHTML = "¡¿Que te ha sucedido?! Hemos revisado tus respuestas varias veces pero lamentamos decirte que tu nota ha sido bastante baja. Pero no te desanimes, sigue practicando y seguro conseguiras mejorar mucho.";
+    }else if(nota >= 6 && nota < 8 ){
+        title.innerHTML = "¡BUENO!";
+        msgResultado.innerHTML = "Aunque esta nota puede parecer aceptable para algunos, creemos que puedes obtener un mejor resultado. Si prácticas mucho seguro conseguirás mejorar bastante. Asi que recuerda: 'La conformidad es el enemigo del crecimiento'.";
+    }else if(nota >= 8 && nota < 9.6){
+        title.innerHTML = "¡MUY BUENO!";
+        msgResultado.innerHTML = "Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
+    }else if(nota >= 9.6 && nota < 10) {
+        title.innerHTML = "¡MUY BUENO!";
+        msgResultado.innerHTML = "¡Que suspenso! &#128562; ¡Por poquito y logras alcanzar una nota excelente! Queremos felicitarte, tu práctica y perseverancia han empezado a dar resultados. El puntaje que haz alcanzado es admirable. ¡Sigue adelante!";
+    }else if (nota == 10){
+        title.innerHTML = "¡FELICIDADES!";
+        msgResultado.innerHTML = "¡Nos has dejado sorprendidos! &#128561; Como dicen, la práctica hace al maestro y ahora tú lo haz demostrado. Puedes sentirte orgulloso/a, haz alcanzado un puntaje perfecto. ¡Sigue así!";
     }
 }
 
@@ -392,43 +374,18 @@ function cambiarAvatar(chico, chica, nota){
                 break;
         }
     }
-
-    switch(nota){
-        case 0 :
-            rostro.src="../public/img/muy-mal.png";
-            break;
-        case 1 :
-            rostro.src="../public/img/muy-mal.png";
-            break;
-        case 2 :
-            rostro.src="../public/img/muy-mal.png";
-            break;
-        case 3 :
-            rostro.src="../public/img/muy-mal.png";
-            break;
-        case 4 :
-            rostro.src="../public/img/malo.png";
-            break; 
-        case 5 :
-            rostro.src="../public/img/malo.png";
-            break; 
-        case 6 :
-            rostro.src="../public/img/bueno.png";
-            break; 
-        case 7 :
-            rostro.src="../public/img/bueno.png";
-            break; 
-        case 8 :
-            rostro.src="../public/img/muy-bueno.png";
-            break; 
-        case 9 :
-            rostro.src="../public/img/muy-bueno.png";
-            break; 
-        case 10:
-            rostro.src="../public/img/excelente.png";
-            break; 
+    
+    if(nota >= 0 && nota < 4){
+        rostro.src="../public/img/muy-mal.png";
+    }else if(nota >= 4 && nota < 6){
+        rostro.src="../public/img/malo.png";
+    }else if(nota >= 6 && nota < 8 ){
+        rostro.src="../public/img/bueno.png";
+    }else if(nota >= 8 && nota < 10){
+        rostro.src="../public/img/muy-bueno.png";
+    }else if (nota == 10){
+        rostro.src="../public/img/excelente.png";
     }
-
 }
 
 //*******************************************************************************************//
@@ -439,4 +396,8 @@ function numeroRandom (min, max){
     // min = Math.ceil(min);
     // max = Math.floor(max);
     return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
+function roundToTwo(num) {
+    return +(Math.round(num + "e+2")  + "e-2");
 }

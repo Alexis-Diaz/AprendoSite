@@ -38,14 +38,48 @@ export const existCategoria = () => {
     const cookie = localStorage.getItem("categoria");
 
     if(cookie !== null && cookie !== ""){
-        //const json = JSON.parse(cookie)
-        existSession = true
+        existCategoria = true
     }
     
-    return existSession;
+    return existCategoria;
+}
+
+export const existResultados = () => {
+    let exisResultados = false;
+    const cookie = localStorage.getItem("resultados");
+
+    if(cookie !== null && cookie !== ""){
+        exisResultados = true
+    }
+    
+    return exisResultados;
 }
 
 export const destroySession = () => {
     localStorage.removeItem("tokenAprendo");
     localStorage.removeItem("categoria");
+}
+
+export const informeIsValid = () =>{
+    const informe = localStorage.getItem("informe");
+    let isValid = false;
+
+    if (informe == null || informe == ""){
+        localStorage.setItem("informe", "1")
+        isValid = true;
+    }else{
+        if(informe === "1"){
+            localStorage.removeItem("informe");
+        }
+    }
+    return isValid
+}
+
+export const destroyResultados = () => {
+    localStorage.removeItem("resultados");
+    localStorage.removeItem("categoria");
+}
+
+export const destroyNotas = () => {
+    localStorage.removeItem("resultados");
 }

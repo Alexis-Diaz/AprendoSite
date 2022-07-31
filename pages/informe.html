@@ -9,6 +9,26 @@
     <title>Aprendo-Informe</title>
 </head>
 <body class="bg-color">
+
+    <script type="module">
+        import { existSessionOpen, existCategoria, existResultados, informeIsValid, destroyResultados } from "../js/authorize.js";
+        import { redirectToRegister, redirectToCategories } from "../js/routes.js";
+        if(!existSessionOpen()){
+            redirectToRegister();
+        }
+
+        if(!existCategoria() || !existResultados()){
+            redirectToCategories();
+        }
+
+        if(!informeIsValid()){
+            destroyResultados();
+            redirectToCategories();
+        }
+
+
+    </script>
+
     <div class="container">
         <div class="container-title">
             <img class="estrella" id="star-left" src="../public/img/estrella.png">
