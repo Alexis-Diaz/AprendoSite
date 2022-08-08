@@ -9,7 +9,7 @@ function redirectToRegister (){
     // console.log(location.pathname);
 
     if(isProduction){
-        window.location.href = "/pages/register.html"
+        window.location.href = "/AprendoSite/pages/register.html"
     }else{
         window.location.href = `${UrlGlobal}pages/register.html`
     }
@@ -22,7 +22,7 @@ function redirectToCategories (){
 
     //Sirve la url
     if(isProduction){
-         window.location.href = "/pages/categories.html"
+         window.location.href = "/AprendoSite/pages/categories.html"
     }else{
         window.location.href = `${UrlGlobal}pages/categories.html`
     }
@@ -30,7 +30,7 @@ function redirectToCategories (){
 
 function redirectToConsejos (){
     if(isProduction){
-        window.location.href = "/pages/consejos.html"
+        window.location.href = "/AprendoSite/pages/consejos.html"
     }else{
         window.location.href = `${UrlGlobal}pages/consejos.html`
     }
@@ -38,7 +38,7 @@ function redirectToConsejos (){
 
 function redirectToIndex (){
     if(isProduction){
-        window.location.href = "/"
+        window.location.href = "/AprendoSite"
     }else{
         window.location.href = `${UrlGlobal}index.html`
     }
@@ -46,7 +46,7 @@ function redirectToIndex (){
 
 function redirectToOperaciones () {
     if(isProduction){
-        window.location.href = "/pages/operaciones.html"
+        window.location.href = "/AprendoSite/pages/operaciones.html"
     }else{
         window.location.href = `${UrlGlobal}pages/operaciones.html`
     }
@@ -54,7 +54,7 @@ function redirectToOperaciones () {
 
 function redirectToError () {
     if(isProduction){
-        window.location.href = "/pages/error.html"
+        window.location.href = "/AprendoSite/pages/error.html"
     }else{
         window.location.href = `${UrlGlobal}pages/error.html`
     }
@@ -62,7 +62,7 @@ function redirectToError () {
 
 function redirectToInforme () {
     if(isProduction){
-        window.location.href = "/pages/informe.html"
+        window.location.href = "/AprendoSite/pages/informe.html"
     }else{
         window.location.href = `${UrlGlobal}pages/informe.html`
     }
