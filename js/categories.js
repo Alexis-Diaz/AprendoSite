@@ -34,6 +34,16 @@ btnTodo.addEventListener('click', e => {
 
 const btnCerrar = document.getElementById("btnCerrar");
 btnCerrar.addEventListener('click', e => {
+    document.getElementById("modalCategories").style.display = "initial";
+});
+
+const btnAceptar = document.getElementById("btnAceptar");
+btnAceptar.addEventListener("click", e => {
     destroySession();
     redirectToIndex();
-});
+})
+
+const btnRechazar = document.getElementById("btnRechazar");
+btnRechazar.addEventListener("click", e => {
+    document.getElementById("modalCategories").style.display = "none";
+})
