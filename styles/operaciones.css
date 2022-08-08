@@ -359,13 +359,13 @@
         margin-top: 0;
         width: 50%;
         margin-left: 1%;
-        font-size: 1em;
+        font-size: 1.2em;
         letter-spacing: 1px;
     }
 
     .timer{
         font-size: 2.5em;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         margin-right: 7%;
     }
 
@@ -408,6 +408,35 @@
         font-size: 1.2em;
         padding-right: 10px;
         margin-bottom: 10px;
+    }
+}
+
+/*Para pantallas con un alto maximo a 500 px*/
+@media screen and (max-height:500px){
+    
+    .container-operacion{
+        padding-top: 20px;
+    }
+    
+
+    .tiempo{
+        font-size: 1.2em;
+    }
+
+    .timer{
+        letter-spacing: 1px;
+    }
+    
+    /*Operaciones matematicas*/
+    .operacion-arriba, .operacion-abajo{
+        border: solid red 2px;
+        height: 70px;
+        font-size: 3.2em;
+    }
+
+    #txtResultado{
+        height: 70px;
+        font-size: 3.2em;
     }
 }
 
