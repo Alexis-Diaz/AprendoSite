@@ -4,7 +4,7 @@ import { cambiarSignoOperacion, comprobarRespuesta, cambiarNumerosOperacion, ini
 
 //configuracion
 const minutos = 0;
-const segundos = 25;
+const segundos = 16;
 const ejercicios = 15;
 //configuracion
 
