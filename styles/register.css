@@ -113,7 +113,7 @@ button {
     font-size: 1.2em;
 }
 
-.btn-iniciar{
+.btn-iniciar, .btn-aceptar{
     background-color: rgb(64 81 225);
 }
 
@@ -128,11 +128,55 @@ button {
 .btn-volver:hover{
     box-shadow: -5px 5px 5px rgb(130, 135, 180);
 }
-.btn-iniciar:hover{
+.btn-iniciar:hover, .btn-aceptar:hover{
     box-shadow: 5px 5px 5px rgb(130, 135, 180);
 }
 
+/*Diseño para el modal*/
+.modal {
+    display: auto;
+    position:fixed;
+    height: 50%;
+    top: 25%;
+    width: 50%;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgb(165, 165, 165), -2px -2px 5px rgb(235, 235, 235);
+}
+
+#iconAlert{
+    height: 80px;
+}
+
+.modal-title{
+    margin-top: 0;
+    font-family: "Paytone One";
+    font-size: 2em;
+    letter-spacing: 2px;
+    color: rgb(99 99 99)
+}
+
+.btn-aceptar{
+    background-color: rgb(64 81 225);
+}
+
+.btn-aceptar:hover{
+    box-shadow: 5px 5px 5px rgb(130, 135, 180);
+}
+
+
 /*Desde aqui se maneja los tamaños de la pantalla*/
+
+/*Media queries para el modal*/
+@media screen and (max-width: 600px){
+    .modal {
+        width: auto;
+        height: auto;
+        left: 5%;
+        right: 5%;
+    }
+}
 
 /*Para pantallas menores a 450px*/
 @media screen and (max-width:450px){
