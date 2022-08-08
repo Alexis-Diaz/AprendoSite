@@ -12,29 +12,22 @@
 }
 
 .container-tiempo{
-    border:solid 1px green;
     text-align: right;
     width: 100%;
 }
 
 .container-img{
-    border:solid 1px green;
-
     width: 33.33333%;
     position: relative;
     height: 60vh;
 }
 
 .container-operacion{
-    border:solid 1px green;
-
     width: 33.33333%;
     text-align: center;
 }
 
 .form-control{
-    border:solid 1px green;
-
     width: 33.33333%;
     display: flex;
     flex-wrap: wrap;
@@ -54,7 +47,6 @@
 }
 
 .timer{
-    color: rgb(12 143 25);
     font-family: "Paytone One";
     font-size: 3.5em;
     letter-spacing: 4px;
@@ -223,7 +215,6 @@
     }
 
     .form-button{
-        border:solid red 2px;
         margin: 0 0 0 0;
         text-align: right;
     }
@@ -430,7 +421,6 @@
     
     /*Operaciones matematicas*/
     .operacion-arriba, .operacion-abajo{
-        border: solid red 2px;
         height: 70px;
         font-size: 3.2em;
     }
