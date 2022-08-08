@@ -7,17 +7,22 @@
 }
 
 .container-title{
+    border: 2px greenyellow solid;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container-card{
+    border: 2px greenyellow solid;
+
     text-align: center;
     position: relative;
 }
 
 .title{
+    border: solid orange 2px;
     font-size: 4em;
     font-family: "Paytone One";
     color: white;
@@ -25,6 +30,7 @@
 }
 
 .estrella{
+    border: solid yellow 2px;
     height: 80px;
 }
 
@@ -58,6 +64,8 @@ p{
 }
 
 .card{
+    border: 2px greenyellow solid;
+
     background-color: white;
     position: absolute;
     width: 400px; 
@@ -73,6 +81,7 @@ p{
 
 /*Botones*/
 .form-control{
+    border: 1px red solid;
     text-align: right;
     height: 180px;
     padding-top: 120px;
@@ -100,4 +109,59 @@ p{
 }
 #btnIrCategorias:hover{
     box-shadow: 5px 5px 5px rgb(130, 135, 180);
+}
+
+@media screen and (max-width:1077px){
+    /*Botones*/
+    .form-control{
+        border: 1px red solid;
+        text-align: center;
+        height: 260px;
+        padding-top: 200px;
+    }
+}
+
+@media screen and (max-width:800px){  
+    .title{
+        font-size: 3.5em;
+        margin: 0 5px 0 5px;
+    }
+
+    .estrella{
+        height: 80px;
+    }
+    p{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width:600px){  
+    .title{
+        font-size: 3em;
+        margin: 0 5px 0 5px;
+    }
+
+    .estrella{
+        height: 50px;
+    }
+
+    p{
+        font-size: 1.3em;
+    }
+
+}
+
+@media screen and (max-width:460px){  
+    .title{
+        font-size: 2.2em;
+        margin: 0 5px 0 5px;
+    }
+
+    .estrella{
+        height: 40px;
+    }
+
+    p{
+        font-size: 1.2em;
+    }
 }

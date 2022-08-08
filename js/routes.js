@@ -1,4 +1,4 @@
-const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html|pages\/error.html|pages\/operaciones.html/
+const regularExpression = /index.html|pages\/register.html|pages\/categories.html|pages\/consejos.html|pages\/operaciones.html|pages\/error.html|pages\/operaciones.html|pages\/informe.html/
 const UrlGlobal = location.pathname.replace(regularExpression, "");
 let isProduction = false;
 
