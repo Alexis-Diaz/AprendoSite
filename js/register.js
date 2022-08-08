@@ -16,6 +16,15 @@ btnIniciar.addEventListener('click', e => {
 
     }else{
         //el usuario es incorrecto
+        const modal = document.getElementById("modalRegister")
+        modal.style.display = "initial"
+        console.log(modal.style)
         console.log("USUARIO INVALIDO")
     }
 });
+
+const btnCloseModal = document.getElementById("modalRegister");
+btnCloseModal.addEventListener("click", e => {
+    const modal = document.getElementById("modalRegister")
+    modal.style.display = "none"
+})
