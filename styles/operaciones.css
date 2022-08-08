@@ -12,22 +12,29 @@
 }
 
 .container-tiempo{
+    border:solid 1px green;
     text-align: right;
     width: 100%;
 }
 
 .container-img{
+    border:solid 1px green;
+
     width: 33.33333%;
     position: relative;
     height: 60vh;
 }
 
 .container-operacion{
+    border:solid 1px green;
+
     width: 33.33333%;
     text-align: center;
 }
 
 .form-control{
+    border:solid 1px green;
+
     width: 33.33333%;
     display: flex;
     flex-wrap: wrap;
@@ -216,6 +223,7 @@
     }
 
     .form-button{
+        border:solid red 2px;
         margin: 0 0 0 0;
         text-align: right;
     }
@@ -328,23 +336,23 @@
     .container-tiempo{
         text-align: left;
         width: 37%;
-        height: 20vh;
+        height: 25vh;
     }
     
     .container-img{
         width: 37%;
-        height: 77vh;
+        height: 72vh;
     }
     
     .container-operacion{
         width: 63%;
-        height: 77vh;
+        height: 67vh;
         padding-top: 50px;
     }
     
     .form-control{
         width: 63%;
-        height: 20vh;
+        height: 30vh;
     }
 
     .tiempo{
@@ -381,7 +389,7 @@
     }
 
     .btn-salir{
-        right: 0;
+        right: 10px;
         left: auto;
     }
 
