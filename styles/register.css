@@ -159,6 +159,7 @@ button {
 
 .btn-aceptar{
     background-color: rgb(64 81 225);
+    margin:5px;
 }
 
 .btn-aceptar:hover{
