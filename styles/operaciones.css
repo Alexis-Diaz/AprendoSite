@@ -353,6 +353,7 @@
     .form-control{
         width: 63%;
         height: 30vh;
+        justify-content: flex-start;
     }
 
     .tiempo{
