@@ -32,7 +32,17 @@ btnEnviar.addEventListener("click", e => {
 
 const btnSalir = document.getElementById("btnSalir");
 btnSalir.addEventListener('click', e => {
+    document.getElementById("modalOperaciones").style.display = "initial";
+});
+
+const btnAceptar = document.getElementById("btnAceptar");
+btnAceptar.addEventListener("click", e => {
     destroyResultados();
     redirectToCategories();
-});
+})
+
+const btnRechazar = document.getElementById("btnRechazar");
+btnRechazar.addEventListener("click", e => {
+    document.getElementById("modalOperaciones").style.display = "none";
+})
 

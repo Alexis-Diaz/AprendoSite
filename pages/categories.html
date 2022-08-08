@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/categories.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One">
+    <link rel="stylesheet" type="text/css" href="../styles/modal.css">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One|Comfortaa">
     <title>Aprendo-Categorias</title>
 </head>
 <body class="bg-color">
@@ -56,9 +58,23 @@
             </div>
         </div>
     </div>
-    <div class="form-control"
+
+    <div class="form-control">
         <div class="form-button">
             <button id="btnCerrar" class="btn-volver">Cerrar juego</button>
+        </div>
+    </div>
+
+    <div id="modalCategories" class="container-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <img id="iconAlert" src="../public/icon/alert.png">
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title">¿Seguro que deseas abandonar el juego?</h3>
+                <button id="btnAceptar" class="btn-aceptar">Si</button>
+                <button id="btnRechazar" class="btn-rechazar">No</button>
+            </div>
         </div>
     </div>
 
