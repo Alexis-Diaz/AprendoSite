@@ -300,6 +300,7 @@ export const calcularNota = () => {
 
     cambiarMensajes(nota);
     cambiarAvatar(chico, chica, nota);
+    reproducirSonido(nota);
     //para completar tarjeta de resultados
     document.getElementById("nota").innerHTML = nota;
     document.getElementById("aciertos").innerHTML = aciertos;
@@ -385,6 +386,19 @@ function cambiarAvatar(chico, chica, nota){
         rostro.src="../public/img/muy-bueno.png";
     }else if (nota == 10){
         rostro.src="../public/img/excelente.png";
+    }
+}
+
+
+function reproducirSonido(nota){
+    const audio = document.getElementById("audioInforme");
+    
+    if(nota >= 0 && nota < 6){
+        audio.src="../public/audio/sonido-loser.mp3";
+        audio.autoplay = "autoplay";
+    }else if(nota >= 6 && nota <=10){
+        audio.src="../public/audio/sonido-winner.mp3";
+        audio.autoplay = "autoplay";
     }
 }
 
