@@ -55,11 +55,6 @@ export const existResultados = () => {
     return exisResultados;
 }
 
-export const destroySession = () => {
-    localStorage.removeItem("tokenAprendo");
-    localStorage.removeItem("categoria");
-}
-
 export const informeIsValid = () =>{
     const informe = localStorage.getItem("informe");
     let isValid = false;
@@ -74,6 +69,12 @@ export const informeIsValid = () =>{
     }
     return isValid
 }
+
+export const destroySession = () => {
+    localStorage.removeItem("tokenAprendo");
+    localStorage.removeItem("categoria");
+}
+
 
 export const destroyResultados = () => {
     localStorage.removeItem("resultados");

@@ -11,10 +11,13 @@
 </head>
 <body class="bg-color">
     <script type="module">
-        import { existSessionOpen } from "../js/authorize.js";
-        import { redirectToRegister } from "../js/routes.js";
+        import { existSessionOpen, existCategoria } from "../js/authorize.js";
+        import { redirectToRegister, redirectToCategories } from "../js/routes.js";
         if(!existSessionOpen()){
             redirectToRegister();
+        }else{
+            const res = existCategoria();
+            if(!res){redirectToCategories()}
         }
     </script>
 
