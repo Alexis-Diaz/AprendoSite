@@ -1,7 +1,7 @@
 
 /*Diseño para el modal*/
 .container-modal{
-    display: none;
+    display: initial;
     background-color: rgba(0, 0, 0, 0.767);
     position: fixed;
     top: 0;
