@@ -392,16 +392,16 @@ function cambiarAvatar(chico, chica, nota){
     if(chica){
         switch(numeroAleatorio){
             case 1:
-                avatar.src="../public/img/chica1.png";
+                avatar.src="../public/img/chica3.png";
                 break;
             case 2:
-                avatar.src="../public/img/chica2.png";
+                avatar.src="../public/img/chica3.png";
                 break;
             case 3:
                 avatar.src="../public/img/chica3.png";
                 break;
             case 4:
-                avatar.src="../public/img/chica4.png";
+                avatar.src="../public/img/chica3.png";
                 break;
         }
     }
