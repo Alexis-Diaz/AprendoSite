@@ -73,14 +73,18 @@ export const informeIsValid = () =>{
 export const destroySession = () => {
     localStorage.removeItem("tokenAprendo");
     localStorage.removeItem("categoria");
+    localStorage.removeItem("resultados");
+    localStorage.removeItem("historialResultados");
 }
 
 
 export const destroyResultados = () => {
     localStorage.removeItem("resultados");
+    localStorage.removeItem("historialResultados");
     localStorage.removeItem("categoria");
 }
 
 export const destroyNotas = () => {
     localStorage.removeItem("resultados");
+    localStorage.removeItem("historialResultados");
 }
