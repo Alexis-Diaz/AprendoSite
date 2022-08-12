@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One|Comfortaa">
     <link rel="stylesheet" type="text/css" href="../styles/informe.css">
+    <link rel="stylesheet" type="text/css" href="../styles/modal_resultados.css">
     <title>Aprendo-Informe</title>
 </head>
 <body class="bg-color">
@@ -25,8 +26,6 @@
             destroyResultados();
             redirectToCategories();
         }
-
-
     </script>
 
     <div class="container">
@@ -62,7 +61,187 @@
         <div class="form-control">
             <button id="btnVolverJugar">Volver a jugar</button>
             <button id="btnIrCategorias">Ir a categorías</button>
+            <button id="btnVerResultados">Ver resultados</button>
         </div>
+    </div>
+
+    <div id="modalResultados" class="container-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h1 class="modal-title">Comprueba tus respuestas</h1>
+            </div>
+            <div class="modal-body">
+
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+                <div class="card-modal">
+                    <div><span id="indice" class="card-number-modal">01</span></div>
+                    <div class="card-body-modal">
+                        <div><span id="operacion">10 + 30 = ?</span></div>
+                        <div><span>Tu respuesta </span><span id="rUser" class=res-error> 40 </span></div>
+                        <div><span>Respuesta correcta </span><span id="rSystem" class="res-correct"> 40 </span></div>
+                    </div>
+                    <div class="card-footer-modal">
+                        <img id="iconRes" src="../public/icon/correct.svg">
+                    </div>
+                </div>
+
+                
+        </div>      
+         
+        <button id="btnCerrarModal" class="btn-aceptar">Cerrar</button>
     </div>
 
     <audio id="audioInforme" src=""></audio>

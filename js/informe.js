@@ -20,4 +20,22 @@ btnVolverJugar.addEventListener("click", e => {
     redirectToOperaciones();
 });
 
+const btnVerResultados = document.getElementById("btnVerResultados");
+btnVerResultados.addEventListener("click", e => {
+    toogleModal();
+});
 
+
+function toogleModal(){
+    let display = document.getElementById("modalResultados");
+    if(display.style.display === "initial" ){
+        display.style.display = "none";
+    }else{
+        display.style.display = "initial";
+    }
+}
+
+const btnCerrarModal = document.getElementById("btnCerrarModal");
+btnCerrarModal.addEventListener("click", e => {
+    toogleModal();
+});

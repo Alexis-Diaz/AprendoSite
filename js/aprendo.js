@@ -140,41 +140,51 @@ export const comprobarRespuesta = (veces) => {
     
     let aciertos = 0;
     let errores = 0;
+    let resCorrecta = 0;
 
     switch(tipoOperacion){
         case '+':
             if(resUsuario == numA + numB){
+                resCorrecta = resUsuario
                 aciertos ++;
             }else{
+                resCorrecta = numA + numB;
                 errores ++;
             }
         break;
 
         case '-':
             if(resUsuario == numA - numB){
+                resCorrecta = resUsuario
                 aciertos ++;
             }else{
+                resCorrecta = numA - numB;
                 errores ++;
             }
         break;
 
         case '÷':
             if(resUsuario == numA / numB){
+                resCorrecta = resUsuario
                 aciertos ++;
             }else{
+                resCorrecta = numA / numB;
                 errores ++;
             }
         break;
 
         case 'x':
             if(resUsuario == numA * numB){
+                resCorrecta = resUsuario
                 aciertos ++;
             }else{
+                resCorrecta = numA * numB;
                 errores ++;
             }
         break;
     }
 
+    guardarHistorialRespuestas(numA, numB, tipoOperacion, resUsuario, resCorrecta);
     if(guardarRespuestas(aciertos, errores, veces)){
         res = true;
     }else{
@@ -268,6 +278,21 @@ function guardarRespuestas(aciertos, errores, veces ){
 
     }
     return res;
+}
+
+//Funcion para guardar el registro de las operaciones realizadas por el usuario
+function guardarHistorialRespuestas(numA, numB, tipoOperacion, respuestaUser, respuestaCorrecta){
+    let obtenerHistorialResultados = localStorage.getItem("historialResultados");
+   
+    if(obtenerHistorialResultados !== null){
+
+        obtenerHistorialResultados += `|${numA} ${tipoOperacion} ${numB}&${respuestaUser}&${respuestaCorrecta}`;
+       
+        localStorage.setItem("historialResultados", obtenerHistorialResultados);
+
+    }else{
+        localStorage.setItem("historialResultados", `${numA} ${tipoOperacion} ${numB}&${respuestaUser}&${respuestaCorrecta}`);
+    }
 }
 
 export const conteoEjercicios = (resueltos, total) => {
