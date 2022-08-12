@@ -282,6 +282,11 @@ function guardarRespuestas(aciertos, errores, veces ){
 
 //Funcion para guardar el registro de las operaciones realizadas por el usuario
 function guardarHistorialRespuestas(numA, numB, tipoOperacion, respuestaUser, respuestaCorrecta){
+
+    if(!respuestaUser && respuestaUser !== 0 ){
+        respuestaUser = "sin respuesta"
+    }
+
     let obtenerHistorialResultados = localStorage.getItem("historialResultados");
    
     if(obtenerHistorialResultados !== null){
